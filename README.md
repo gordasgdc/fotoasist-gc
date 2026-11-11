@@ -36,16 +36,16 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-biblioteca.jpg" alt="FotoAsist GC — Library" width="100%"><br><b>Library</b><br><sub>Organised sources and albums, without moving the originals.</sub></td>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-selectie.jpg" alt="FotoAsist GC — Selection" width="100%"><br><b>Selection</b><br><sub>Keep, reject, compare and inspect at 100%.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-biblioteca-1.0.0.jpg" alt="FotoAsist GC — Library" width="100%"><br><b>Library</b><br><sub>Organised sources and albums, without moving the originals.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-selectie-1.0.0.jpg" alt="FotoAsist GC — Selection" width="100%"><br><b>Selection</b><br><sub>Keep, reject, compare and inspect at 100%.</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-editare.jpg" alt="FotoAsist GC — Editing" width="100%"><br><b>Editing</b><br><sub>Exposure, white balance, tones, masks and geometry.</sub></td>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-profil.jpg" alt="FotoAsist GC — Personal profile" width="100%"><br><b>Personal profile</b><br><sub>A local workflow from original–final pairs you approve.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-editare-1.0.0.jpg" alt="FotoAsist GC — Editing" width="100%"><br><b>Editing</b><br><sub>Exposure, white balance, tones, masks and geometry.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-profil-1.0.0.jpg" alt="FotoAsist GC — Personal profile" width="100%"><br><b>Personal profile</b><br><sub>A local workflow from original–final pairs you approve.</sub></td>
 </tr>
 </table>
 
-<sub>Real captures of the application (version 0.9), with synthetic demonstration images, not RAW files.</sub>
+<sub>Real captures of the application (version 1.0.0), with synthetic demonstration images, not RAW files.</sub>
 
 ## A closer look
 

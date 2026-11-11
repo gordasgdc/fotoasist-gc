@@ -36,16 +36,16 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-biblioteca.jpg" alt="FotoAsist GC — Biblioteca" width="100%"><br><b>Biblioteca</b><br><sub>Fuentes y álbumes organizados, sin mover los originales.</sub></td>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-selectie.jpg" alt="FotoAsist GC — Selección" width="100%"><br><b>Selección</b><br><sub>Conserva, descarta, compara e inspecciona al 100%.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-biblioteca-1.0.0.jpg" alt="FotoAsist GC — Biblioteca" width="100%"><br><b>Biblioteca</b><br><sub>Fuentes y álbumes organizados, sin mover los originales.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-selectie-1.0.0.jpg" alt="FotoAsist GC — Selección" width="100%"><br><b>Selección</b><br><sub>Conserva, descarta, compara e inspecciona al 100%.</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-editare.jpg" alt="FotoAsist GC — Edición" width="100%"><br><b>Edición</b><br><sub>Exposición, balance de blancos, tonos, máscaras y geometría.</sub></td>
-<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-profil.jpg" alt="FotoAsist GC — Perfil personal" width="100%"><br><b>Perfil personal</b><br><sub>Flujo local a partir de pares original–final que tú apruebas.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-editare-1.0.0.jpg" alt="FotoAsist GC — Edición" width="100%"><br><b>Edición</b><br><sub>Exposición, balance de blancos, tonos, máscaras y geometría.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-profil-1.0.0.jpg" alt="FotoAsist GC — Perfil personal" width="100%"><br><b>Perfil personal</b><br><sub>Flujo local a partir de pares original–final que tú apruebas.</sub></td>
 </tr>
 </table>
 
-<sub>Capturas reales de la aplicación (versión 0.9), con imágenes sintéticas de demostración, no archivos RAW.</sub>
+<sub>Capturas reales de la aplicación (versión 1.0.0), con imágenes sintéticas de demostración, no archivos RAW.</sub>
 
 ## Más cerca de la imagen
 
