@@ -36,7 +36,7 @@ final class ProfileEstimatorTests: XCTestCase {
     }
     func testUnrelatedFinalIsExcludedGeometryMismatchRejectedAndProfileDoesNotTouchOtherModules() throws {
         let nat = natural(); let img = scene(5)
-        let junk = (rgb: (0..<(240 * 160 * 3)).map { Float(($0 * 7919) % 255) / 255 }, w: 240, h: 160)
+        let junkRGB: [Float] = (0..<(240 * 160 * 3)).map { (i: Int) -> Float in Float((i * 7919) % 255) / 255 }; let junk = (rgb: junkRGB, w: 240, h: 160)
         let f = ProfileEstimator.fit(pairID: "junk", prepared: try ProfileEstimator.prepare(raw: img, final: junk, estimate: 0, maxSide: 100), drtNatural: nat, maxEvaluations: 200)
         let agg = ProfileEstimator.aggregate([f], technicalPolicy: "t"); XCTAssertTrue(agg.used.isEmpty || f.improvement > 0)
         XCTAssertThrowsError(try ProfileEstimator.prepare(raw: img, final: (rgb: [Float](repeating: 0.5, count: 100 * 100 * 3), w: 100, h: 100), estimate: 0)) { XCTAssertTrue("\($0)".contains("Geometrie")) }

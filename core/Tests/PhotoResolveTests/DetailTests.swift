@@ -17,7 +17,7 @@ final class DetailTests: XCTestCase {
     }
     func testSharpenOvershootsAtEdgeAndKeepsChroma() {
         var a = edge(400, 1000); var s = DetailSettings(); s.sharpAmount = 1.0; s.sharpRadius = 2.0; apply(&a, 400, 1000, s)   // σ ≈ 2 px
-        let hiSide = a[(500 * 400 + 201) * 3 + 1], loSide = a[(500 * 400 + 198) * 3 + 1]
+        let rowStart: Int = 500 * 400; let hiSide: Float = a[(rowStart + 201) * 3 + 1]; let loSide: Float = a[(rowStart + 198) * 3 + 1]
         XCTAssertGreaterThan(hiSide, 0.6 + 0.01, "supra-accentuare pe partea luminoasă"); XCTAssertLessThan(loSide, 0.3 - 0.01, "sub-accentuare pe partea întunecată")
         let i = (500 * 400 + 201) * 3; XCTAssertEqual(a[i] - a[i + 1], 0.05, accuracy: 1e-5, "diferența R−G (croma) nu se schimbă (aceeași deltă pe canale)")
     }

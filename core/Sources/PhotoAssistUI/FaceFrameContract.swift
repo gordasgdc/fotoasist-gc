@@ -34,7 +34,10 @@ enum FaceFrameContract {
         var px = [UInt8](repeating: 0, count: side * side * 4)
         guard let ctx = CGContext(data: &px, width: side, height: side, bitsPerComponent: 8, bytesPerRow: side * 4, space: CGColorSpace(name: CGColorSpace.sRGB)!, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return [] }
         ctx.interpolationQuality = .medium; ctx.draw(cg, in: CGRect(x: 0, y: 0, width: side, height: side))
-        return (0..<(side * side)).map { 0.2126 * Double(px[4 * $0]) + 0.7152 * Double(px[4 * $0 + 1]) + 0.0722 * Double(px[4 * $0 + 2]) }
+        return (0..<(side * side)).map { (i: Int) -> Double in   // pași expliciți: expresia compactă depășea verificarea de tipuri pe compilatoare mai vechi
+            let r = Double(px[4 * i]), g = Double(px[4 * i + 1]), b = Double(px[4 * i + 2])
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b
+        }
     }
     /// Transformarea dihedrală t (0…7) a unei grile side×side: rezultat[y][x] = sursă[...]
     static func transform(_ l: [Double], _ t: Int) -> [Double] {
