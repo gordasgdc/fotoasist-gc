@@ -35,14 +35,14 @@ final class RawDecoderTests: XCTestCase {
         let d = try RawFile(path: f).decodeLinearDWG(o)
         XCTAssertEqual(d.report.whitePlan.black, 4095); XCTAssertEqual(d.report.appliedCrop.w, 11648); XCTAssertEqual(d.report.appliedCrop.h, 8735)
         XCTAssertLessThan(d.report.fracNegative, 0.02)                      // doar zgomot sub negru, nu majoritatea cadrului
-        var ys = stride(from: 0, to: d.image.rgb.count, by: 3 * 17).map { 0.2949 * d.image.rgb[$0] + 0.6254 * d.image.rgb[$0 + 1] + 0.0797 * d.image.rgb[$0 + 2] }; ys.sort()
+        let ys = sampledLuma(d.image.rgb)
         XCTAssertGreaterThan(ys[ys.count / 2], 0.003)                       // mediana luminanței rămâne pozitivă (≈ 0.006 măsurat independent cu rawpy/LibRaw)
     }
     /// Compensarea dezvoltării: valoarea camerei se citește (−1.72), câștigul e liniar (2^EV pe mediană), iar dezvoltarea veche (revizia 1) își păstrează exact comportamentul (crop 3:2, ~57% sub zero).
     func testFujiBaselineGainAndLegacyRevisionAreExplicit() throws {
         guard let f = ProcessInfo.processInfo.environment["GDC_PA_FUJI_RAF"] else { throw XCTSkip("fără GDC_PA_FUJI_RAF") }
         XCTAssertEqual(try RawFile(path: f).cameraExposureShift ?? 0, -1.72, accuracy: 0.01)
-        func medianY(_ d: DecodedLinear) -> Float { var ys = stride(from: 0, to: d.image.rgb.count, by: 3 * 17).map { 0.2949 * d.image.rgb[$0] + 0.6254 * d.image.rgb[$0 + 1] + 0.0797 * d.image.rgb[$0 + 2] }; ys.sort(); return ys[ys.count / 2] }
+        func medianY(_ d: DecodedLinear) -> Float { let ys = sampledLuma(d.image.rgb); return ys[ys.count / 2] }
         var o = DecodeOptions(); o.halfSize = true
         let base = try RawFile(path: f).decodeLinearDWG(o); var og = o; og.baselineEV = 1.72
         let gained = try RawFile(path: f).decodeLinearDWG(og)
@@ -75,4 +75,16 @@ final class HighlightPolicyTests: XCTestCase {
         func neutralFrac(_ d: DecodedLinear) -> Double { var n = 0, t = 0; let v = d.image.rgb; for i in stride(from: 0, to: v.count, by: 3) where v[i + 1] > 0.9 { t += 1; if abs(v[i] - v[i + 1]) < 0.15 * v[i + 1] && abs(v[i + 2] - v[i + 1]) < 0.15 * v[i + 1] { n += 1 } }; return t == 0 ? 1 : Double(n) / Double(t) }
         XCTAssertGreaterThan(neutralFrac(sat), neutralFrac(keep))
     }
+}
+
+/// Luminanța unui pixel din 17, sortată crescător (pași expliciți: expresia compactă depășea timpul de verificare a tipurilor pe mașini lente).
+private func sampledLuma(_ rgb: [Float]) -> [Float] {
+    var ys: [Float] = []; ys.reserveCapacity(rgb.count / 51 + 1)
+    var i = 0
+    while i + 2 < rgb.count {
+        let r: Float = rgb[i], g: Float = rgb[i + 1], b: Float = rgb[i + 2]
+        let y: Float = 0.2949 * r + 0.6254 * g + 0.0797 * b
+        ys.append(y); i += 51
+    }
+    ys.sort(); return ys
 }
