@@ -32,6 +32,21 @@
 </tr>
 </table>
 
+## Un tur al aplicației
+
+<table>
+<tr>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-biblioteca.jpg" alt="FotoAsist GC — Bibliotecă" width="100%"><br><b>Bibliotecă</b><br><sub>Surse și albume organizate, fără mutarea originalelor.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-selectie.jpg" alt="FotoAsist GC — Selecție" width="100%"><br><b>Selecție</b><br><sub>Păstrează, respinge, compară și inspectează la 100%.</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-editare.jpg" alt="FotoAsist GC — Editare" width="100%"><br><b>Editare</b><br><sub>Expunere, balans de alb, tonuri, măști și geometrie.</sub></td>
+<td width="50%" valign="top"><img src="https://gordas.dev/foto-asist-gc/assets/app-profil.jpg" alt="FotoAsist GC — Profil personal" width="100%"><br><b>Profil personal</b><br><sub>Flux local din perechi original–final aprobate de tine.</sub></td>
+</tr>
+</table>
+
+<sub>Capturi reale ale aplicației (versiunea 0.9), cu imagini sintetice demonstrative, nu fișiere RAW.</sub>
+
 ## Mai aproape de imagine
 
 Fotografia ocupă centrul; instrumentele rămân la îndemână.
