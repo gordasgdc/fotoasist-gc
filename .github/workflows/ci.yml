@@ -1,0 +1,45 @@
+name: CI
+
+# Build and test every pull request and every push to main.
+# No secrets, read-only token, GitHub-hosted runner: behaves the same for forks.
+# Official signed packages are NOT built here (see BUILDING.md, "Official releases").
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+    timeout-minutes: 45
+    env:
+      FOTOASIST_BUILD_ROOT: ${{ github.workspace }}/.build-out
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Toolchain
+        run: |
+          sw_vers
+          swift --version
+      - name: Cache LibRaw
+        uses: actions/cache@v4
+        with:
+          path: .build-out/libraw
+          key: libraw-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/env.sh', 'scripts/build_libraw.sh') }}
+      - name: Build LibRaw (pinned, checksum verified)
+        run: scripts/build_libraw.sh
+      - name: Build
+        run: scripts/swift.sh build --build-tests
+      - name: Test (synthetic data only)
+        run: scripts/swift.sh test
+      - name: Assemble the application (ad-hoc signature)
+        run: scripts/make_app.sh

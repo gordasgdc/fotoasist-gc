@@ -1,0 +1,18 @@
+FotoAsist GC — open-source edition
+Copyright (C) 2026 Dumitru Cristinel Gordas (GDC)
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+The full text of the licence is installed with the application (FotoAsist GC.app/Contents/Resources/LICENSE.txt) and is available at https://www.gnu.org/licenses/gpl-3.0.html. The source code of this exact version is published at https://github.com/gordasgdc/fotoasist-gc.
+
+FotoAsist GC is free of charge. It needs no account, activation, trial or licensing server. It is an independent, non-commercial project, open to contributions and maintained occasionally. Support is voluntary and takes the form of donations only.
+
+Third-party components: LibRaw (LGPL-2.1 or CDDL-1.0), linked dynamically and installed as a separate, replaceable library inside the application. Their notices and licence texts are installed in FotoAsist GC.app/Contents/Resources (THIRD_PARTY_NOTICES.md, licenses/).
+
+The name "FotoAsist GC" and its symbol identify the original project. Modified versions should be given a different name and symbol so they are not mistaken for it.
+
+—
+
+FotoAsist GC — ediția cu sursă deschisă. Program liber, sub GNU General Public License versiunea 3 sau (la alegerea ta) orice versiune ulterioară. Este oferit „ca atare”, FĂRĂ NICIO GARANȚIE. Este gratuit și nu cere cont, activare, perioadă de probă sau server de licențiere. Proiect independent, necomercial, deschis contribuțiilor, cu mentenanță ocazională; susținerea este voluntară, exclusiv sub formă de donație.
